@@ -1,0 +1,96 @@
+{
+  "name": "vue-signalz",
+  "version": "0.1.0",
+  "description": "Lightweight signal-based reactive engine adapter for Vue 3. Lazy computed, scoped effects and async resources powered by intentx-core-z.",
+  "author": "Delpi.Kye",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+
+  "main": "./build/index.cjs.js",
+  "module": "./build/index.esm.js",
+  "types": "./build/index.d.ts",
+
+  "exports": {
+    ".": {
+      "types": "./build/index.d.ts",
+      "import": "./build/index.esm.js",
+      "require": "./build/index.cjs.js",
+      "default": "./build/index.esm.js"
+    }
+  },
+
+  "files": ["build"],
+
+  "scripts": {
+    "clean": "rimraf build",
+    "build": "rollup -c",
+    "cb": "npm run clean && npm run build",
+    "typecheck": "vue-tsc --noEmit",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/delpikye-v/vue-signalz.git"
+  },
+
+  "homepage": "https://github.com/delpikye-v/vue-signalz#readme",
+
+  "bugs": {
+    "url": "https://github.com/delpikye-v/vue-signalz/issues"
+  },
+
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/delpikye-v"
+  },
+
+  "keywords": [
+    "vue",
+    "vue3",
+    "signal",
+    "signals",
+    "reactivity",
+    "reactive engine",
+    "computed",
+    "lazy computed",
+    "effect scope",
+    "async resource",
+    "composition api",
+    "typescript",
+    "fine-grained reactivity",
+    "state management",
+    "vue composable",
+    "signal adapter"
+  ],
+
+  "peerDependencies": {
+    "vue": "^3.3.0"
+  },
+
+  "dependencies": {
+    "intentx-core-z": "^2.2.1"
+  },
+
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "rimraf": "^5.0.0",
+    "rollup": "^4.59.0",
+    "rollup-plugin-esbuild": "^6.1.0",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "rollup-plugin-vue": "^6.0.0",
+    "typescript": "^5.3.0",
+    "vue-tsc": "^3.2.5"
+  },
+
+  "engines": {
+    "node": ">=16"
+  },
+
+  "publishConfig": {
+    "access": "public"
+  }
+}
